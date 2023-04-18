@@ -13,6 +13,8 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
     <style>
       html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
@@ -39,6 +41,7 @@
             <!-- @falvojr: This container has been modified to not use a profile picture. -->
             <div class="w3-container">
               <h2>Priscila Chueryz dos Santos</h2>
+              <i class="uil uil-moon change-theme" id="theme-button"></i>
             </div>
             <div class="w3-container">
               <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-deep-purple"></i>Engenheira de Software</p>
@@ -225,6 +228,27 @@
       <a href="https://www.linkedin.com/in/priscilacs8/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
       <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </footer>
+
+    <script>
+      const themeButton = document.getElementById('theme-button')
+      const darkTheme = 'dark-theme'
+      const iconTheme = 'uil-sun'
+
+      // Previously selected topic (if user selected)
+      const selectedTheme = localStorage.getItem('selected-theme')
+      const selectedIcon = localStorage.getItem('selected-icon')
+
+      // We obtain the current theme that the interface has by validating the dark-theme class
+      const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+      const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+      // We validate if the user previously chose a topic
+      if (selectedTheme) {
+        // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+        document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+        themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+      }
+    </script>
   
   </body>
 
