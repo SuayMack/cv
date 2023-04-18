@@ -118,7 +118,7 @@
         <div class="w3-twothird">
     
           <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-terminal fa-fw w3-margin-right w3-xxlarge w3-text-deep-purple"></i>Sobre</h2>
+            <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-terminal fa-fw w3-margin-right w3-xxlarge w3-text-deep-purple" onclick="myFunction()"></i>Sobre</h2>
             <p>Bacharelado em Engenharia de Software</p>
           </div>
 
@@ -247,6 +247,10 @@
         // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
         document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
         themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+      }      
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
       }
     </script>
   
